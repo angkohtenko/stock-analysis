@@ -1,12 +1,12 @@
 # Stock Analysis with VBA. Code refactoring
 ## Overview of Project
-I've got two datasets of stocks traded for 2017-2018 years. Both datasets are about 3000 rows. My goal was to write a VBA code to analyse trading volumes and annual return. After completing the macro, I refactored it and reduced execution time, so it can be easily used with bigger datasets.
+I've got two datasets of stocks traded for 2017-2018 years. Both datasets are about 3000 rows. My goal was to write a VBA script to analyse trading volumes and annual return. After completing the macro, I refactored it and reduced execution time, so it can be easily used with bigger datasets.
 
 ## Results
 
-### Creating pivot table with analysis
+### Creating pivot table
 First of all, I wrote the macro to create a pivot table where we can find total trading volumes for each stock and the annual return. In addition, I created conditional formatting based on the annual return: green color for profitable stocks and red color for negative return.
-For convenience I assigned macros to buttons and placed them on spreadsheet. It's easy to choose the year to analyze typing in pop-up window.
+For convenience I assigned macros to buttons and placed them on spreadsheet. It's easy to choose the year to analyse typing in pop-up window.
 
 ![Pop-up window](https://github.com/angkohtenko/stock-analysis/blob/main/Resources/Pop-up%20window.png?raw=true)
 
@@ -22,7 +22,7 @@ I measured the efficiency of macro by setting a timer in the script. At the begi
 
 ![Execution time for 2018](https://github.com/angkohtenko/stock-analysis/blob/main/Resources/Execution%20time%20for%202018.png?raw=true)
 
-It may look good with current datasets, but I wasn't sure about larger datasets. I had a loop over all tickers and write a result in a pivot table for every ticker separately. My script was:
+It may look good with current datasets, but I wasn't sure about larger datasets. I had a loop over all tickers and wrote a result in a pivot table for every ticker separately. My script was:
 
 ``` 
 'Create a list of tickers
@@ -135,7 +135,7 @@ and made a loop to save values to these arrays at first and print arrays into th
         
     Next i
 ```
-With this little trick execution time reduced by 80%.
+By this little trick execution time was reduced by 80%.
 
 ![Refactored Execution time for 2017](https://github.com/angkohtenko/stock-analysis/blob/main/Resources/Refactored%20Execution%20time%20for%202017.png?raw=true)
 
